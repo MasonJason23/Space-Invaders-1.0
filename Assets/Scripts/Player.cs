@@ -1,22 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-  public GameObject bullet;
+    public GameObject bullet;
+    public Transform shottingOffset;
+    [Range (1f, 100f)]
+    public float movementSpd;
+    
+    private Rigidbody2D rbody2D;
+    private float horizontalMovement;
 
-  public Transform shottingOffset;
+    private void Start()
+    {
+        rbody2D = GetComponent<Rigidbody2D>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetButtonDown("Fire1"))
-      {
-        GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
-        Debug.Log("Bang!");
+        horizontalMovement = Input.GetAxisRaw("Horizontal");
+        shoot();
+    }
 
-        Destroy(shot, 3f);
+    void FixedUpdate()
+    {
+        rbody2D.velocity = new Vector2(horizontalMovement * movementSpd, 0);
+    }
 
-      }
+    void shoot()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            Debug.Log("Bang!");
+
+            Destroy(shot, 3f);
+        }
     }
 }
