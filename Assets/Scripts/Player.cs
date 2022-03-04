@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetKeyDown(KeyCode.Space))
+      if (Input.GetButtonDown("Fire1"))
       {
         GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
         Debug.Log("Bang!");
