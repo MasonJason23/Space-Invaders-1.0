@@ -14,7 +14,9 @@ public class Aliens : MonoBehaviour
     public Vector3 direction = Vector3.right;
     
     private float accumulatedTime = 0f;
-    private int totalAliens = 0;
+    private float delayShorten;
+    private int totalAliens;
+
     private void Awake()
     {
         for (int i = 0; i < row; i++)
@@ -25,16 +27,23 @@ public class Aliens : MonoBehaviour
                 float newX = alien.transform.position.x + j;
                 float newY = alien.transform.position.y + i;
                 alien.transform.position = new Vector2(newX, newY);
-                totalAliens++;
             }
         }
+        totalAliens = GetComponentsInChildren<Enemy>().Length;
+    }
+
+    private void Start()
+    {
+        delayShorten = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        delayShorten = (1f - ((GetComponentsInChildren<Enemy>().Length - 0.01f) / totalAliens)) / 1.25f;
+        
         accumulatedTime += Time.deltaTime;
-        if (accumulatedTime > movementDelay)
+        if (accumulatedTime > (movementDelay - delayShorten))
         {
             this.transform.position += (direction * movementSpd);
             accumulatedTime = 0f;
