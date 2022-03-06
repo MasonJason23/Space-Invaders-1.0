@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public event Action playerDied;
     public GameObject bullet;
     public Transform shottingOffset;
     [Range (1f, 100f)]
