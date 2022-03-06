@@ -7,33 +7,45 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI playerScore;
-    [SerializeField] private TextMeshProUGUI highScore;
-    private static int score;
-    private static int topScore;
+    public TextMeshProUGUI playerScoreText;
+    public TextMeshProUGUI highScoreText;
+    
+    private static int playerScore;
+    private static int highScore;
     private static bool scoreChange;
-
-    // Start is called before the first frame update
+    private static bool highScoreChange;
+    
     void Start()
     {
-        score = 0;
-        topScore = PlayerPrefs.GetInt("highScore");
+        playerScore = 0;
+        if (PlayerPrefs.GetInt("highScore") != 0)
+        {
+            highScore = PlayerPrefs.GetInt("highScore");
+            updateUIScore(highScoreText, highScore);
+        }
+        else
+        {
+            highScore = 0;
+        }
         scoreChange = false;
+        highScoreChange = false;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (scoreChange)
         {
-            playerScore.text = "0";
-            int size = score.ToString().Length;
-            if (size < 3)
+            if (highScoreChange)
             {
-                playerScore.text += "0";
+                updateUIScore(highScoreText, highScore);
             }
-            playerScore.text += score.ToString();
+            updateUIScore(playerScoreText, playerScore);
             scoreChange = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerPrefs.SetInt("highScore", 0);
         }
     }
 
@@ -42,24 +54,40 @@ public class ScoreManager : MonoBehaviour
         scoreChange = true;
         if (enemyType.Equals("E1"))
         {
-            score += 10;
+            playerScore += 10;
         }
         else if (enemyType.Equals("E2"))
         {
-            score += 20;
+            playerScore += 20;
         }
         else if (enemyType.Equals("E3"))
         {
-            score += 30;
+            playerScore += 30;
         }
         else
         {
             return;
         }
 
-        if (score > topScore)
+        if (playerScore > highScore)
         {
-            PlayerPrefs.SetInt("highScore",score);
+            PlayerPrefs.SetInt("highScore",playerScore);
+            highScore = playerScore;
+            if (!highScoreChange)
+            {
+                highScoreChange = true;
+            }
         }
+    }
+
+    private void updateUIScore(TextMeshProUGUI element, int score)
+    {
+        element.text = "0";
+        int size = score.ToString().Length;
+        if (size < 3)
+        {
+            element.text += "0";
+        }
+        element.text += score.ToString();
     }
 }
