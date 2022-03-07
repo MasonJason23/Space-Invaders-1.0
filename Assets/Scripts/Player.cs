@@ -40,4 +40,9 @@ public class Player : MonoBehaviour
             Destroy(shot, 3f);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        Destroy(gameObject);
+    }
 }
