@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using Random = UnityEngine.Random;
 
@@ -30,6 +31,8 @@ public class ScoreManager : MonoBehaviour
         }
         scoreChange = false;
         highScoreChange = false;
+
+        FindObjectOfType<Player>().playerDied += OnPlayerDeath;
     }
     
     void Update()
@@ -110,5 +113,10 @@ public class ScoreManager : MonoBehaviour
             size++;
         }
         element.text += score.ToString();
+    }
+
+    public void OnPlayerDeath()
+    {
+        Time.timeScale = 0;
     }
 }

@@ -16,6 +16,8 @@ public class Bullet : MonoBehaviour
       mTag = gameObject.tag;
       myRigidbody2D = GetComponent<Rigidbody2D>();
       Fire();
+      
+      FindObjectOfType<Player>().playerDied += OnPlayerDeath;
     }
 
     // Update is called once per frame
@@ -42,5 +44,10 @@ public class Bullet : MonoBehaviour
       {
         Destroy(gameObject);
       }
+    }
+    
+    public void OnPlayerDeath()
+    {
+      Destroy(gameObject);
     }
 }
