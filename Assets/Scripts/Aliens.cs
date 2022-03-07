@@ -40,7 +40,7 @@ public class Aliens : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        delayShorten = (1f - ((GetComponentsInChildren<Enemy>().Length - 0.01f) / totalAliens)) / 1.25f;
+        delayShorten = (1f - ((GetComponentsInChildren<Enemy>().Length - 0.01f) / totalAliens)) / 1.2f;
         
         accumulatedTime += Time.deltaTime;
         if (accumulatedTime > (movementDelay - delayShorten))

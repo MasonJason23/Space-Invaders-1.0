@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3390145920611986610}
   - component: {fileID: 6055069717150008154}
   - component: {fileID: 5948996942061377388}
-  - component: {fileID: 228956808592210655}
+  - component: {fileID: 9115656559121517682}
   m_Layer: 0
   m_Name: Enemy 4
-  m_TagString: E3
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &228956808592210655
+--- !u!114 &9115656559121517682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7483517710255911465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4677e5dca941814380c5a3a33a67d9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cf1271280039634780ed2488004d8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpd: 1

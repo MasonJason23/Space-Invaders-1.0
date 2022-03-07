@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using Random = UnityEngine.Random;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class ScoreManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             PlayerPrefs.SetInt("highScore", 0);
+            updateUIScore(highScoreText, 0);
         }
     }
 
@@ -64,9 +66,27 @@ public class ScoreManager : MonoBehaviour
         {
             playerScore += 30;
         }
-        else
+        else if (enemyType.Equals("UFO"))
         {
-            return;
+            int randomPtVal = Mathf.CeilToInt(Random.value * 5);
+            switch (randomPtVal)
+            {
+                case 2:
+                    playerScore += 100;
+                    break;
+                case 3:
+                    playerScore += 150;
+                    break;
+                case 4:
+                    playerScore += 200;
+                    break;
+                case 5:
+                    playerScore += 250;
+                    break;
+                default:
+                    playerScore += 50;
+                    break;
+            }
         }
 
         if (playerScore > highScore)
@@ -82,11 +102,12 @@ public class ScoreManager : MonoBehaviour
 
     private void updateUIScore(TextMeshProUGUI element, int score)
     {
-        element.text = "0";
+        element.text = "";
         int size = score.ToString().Length;
-        if (size < 3)
+        while (size < 4)
         {
             element.text += "0";
+            size++;
         }
         element.text += score.ToString();
     }

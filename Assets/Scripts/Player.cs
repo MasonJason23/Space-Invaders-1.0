@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
-            Debug.Log("Bang!");
 
             Destroy(shot, 3f);
         }
