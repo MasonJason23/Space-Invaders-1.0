@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6574259240648199494}
   - component: {fileID: 6574259240648199493}
   - component: {fileID: 4076961373221068825}
+  - component: {fileID: 1664330984910006932}
   m_Layer: 0
   m_Name: Shield Part (8)
   m_TagString: Untagged
@@ -108,6 +109,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1664330984910006932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259240648199514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259240748509936
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +133,7 @@ GameObject:
   - component: {fileID: 6574259240748509948}
   - component: {fileID: 6574259240748509939}
   - component: {fileID: 6344204843844756678}
+  - component: {fileID: 1088925754696524806}
   m_Layer: 0
   m_Name: Shield Part (5)
   m_TagString: Untagged
@@ -216,6 +230,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1088925754696524806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259240748509936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259240859887725
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +254,7 @@ GameObject:
   - component: {fileID: 6574259240859887721}
   - component: {fileID: 6574259240859887720}
   - component: {fileID: 698332122404160382}
+  - component: {fileID: 2478670394188867830}
   m_Layer: 0
   m_Name: Shield Part (13)
   m_TagString: Untagged
@@ -324,6 +351,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2478670394188867830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259240859887725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259241177520822
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +419,7 @@ GameObject:
   - component: {fileID: 6574259241226004930}
   - component: {fileID: 6574259241226004929}
   - component: {fileID: 5608468221879395577}
+  - component: {fileID: 1384204087600881259}
   m_Layer: 0
   m_Name: Shield Part (11)
   m_TagString: Untagged
@@ -476,6 +516,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1384204087600881259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259241226004934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259241334088196
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +540,7 @@ GameObject:
   - component: {fileID: 6574259241334088192}
   - component: {fileID: 6574259241334088199}
   - component: {fileID: 4992299701577518397}
+  - component: {fileID: 4598089339970900751}
   m_Layer: 0
   m_Name: Shield Part (1)
   m_TagString: Untagged
@@ -584,6 +637,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4598089339970900751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259241334088196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259241562220352
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +661,7 @@ GameObject:
   - component: {fileID: 6574259241562220364}
   - component: {fileID: 6574259241562220355}
   - component: {fileID: 224457261579903425}
+  - component: {fileID: 875407694503580414}
   m_Layer: 0
   m_Name: Shield Part (7)
   m_TagString: Untagged
@@ -692,6 +758,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &875407694503580414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259241562220352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259241946030858
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +782,7 @@ GameObject:
   - component: {fileID: 6574259241946030902}
   - component: {fileID: 6574259241946030901}
   - component: {fileID: 1238275376506153215}
+  - component: {fileID: 625074622171167650}
   m_Layer: 0
   m_Name: Shield Part (12)
   m_TagString: Untagged
@@ -800,6 +879,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &625074622171167650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259241946030858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259242115531700
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +903,7 @@ GameObject:
   - component: {fileID: 6574259242115531696}
   - component: {fileID: 6574259242115531703}
   - component: {fileID: 1661700499509703230}
+  - component: {fileID: 5002600999883409745}
   m_Layer: 0
   m_Name: Shield Part
   m_TagString: Untagged
@@ -908,6 +1000,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5002600999883409745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259242115531700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259242148707646
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +1024,7 @@ GameObject:
   - component: {fileID: 6574259242148707642}
   - component: {fileID: 6574259242148707641}
   - component: {fileID: 3633515103352330828}
+  - component: {fileID: 6576365518807862187}
   m_Layer: 0
   m_Name: Shield Part (4)
   m_TagString: Untagged
@@ -1016,6 +1121,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6576365518807862187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259242148707646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259242262135252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1145,7 @@ GameObject:
   - component: {fileID: 6574259242262135248}
   - component: {fileID: 6574259242262135255}
   - component: {fileID: 5031703848538781359}
+  - component: {fileID: 4950375635326811747}
   m_Layer: 0
   m_Name: Shield Part (9)
   m_TagString: Untagged
@@ -1124,6 +1242,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4950375635326811747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259242262135252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259242267734522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1266,7 @@ GameObject:
   - component: {fileID: 6574259242267734502}
   - component: {fileID: 6574259242267734501}
   - component: {fileID: 2388708176191741243}
+  - component: {fileID: 5804650696288185218}
   m_Layer: 0
   m_Name: Shield Part (10)
   m_TagString: Untagged
@@ -1232,6 +1363,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5804650696288185218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259242267734522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259242307161430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1387,7 @@ GameObject:
   - component: {fileID: 6574259242307161426}
   - component: {fileID: 6574259242307161425}
   - component: {fileID: 4569937012308632785}
+  - component: {fileID: 4129461407742658364}
   m_Layer: 0
   m_Name: Shield Part (2)
   m_TagString: Untagged
@@ -1340,6 +1484,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4129461407742658364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259242307161430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259242395802714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1508,7 @@ GameObject:
   - component: {fileID: 6574259242395802694}
   - component: {fileID: 6574259242395802693}
   - component: {fileID: 931447795742238352}
+  - component: {fileID: 4624429412225914029}
   m_Layer: 0
   m_Name: Shield Part (3)
   m_TagString: Untagged
@@ -1448,6 +1605,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4624429412225914029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259242395802714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574259242437705710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1629,7 @@ GameObject:
   - component: {fileID: 6574259242437705706}
   - component: {fileID: 6574259242437705705}
   - component: {fileID: 1702364202539347195}
+  - component: {fileID: 2305299583761200966}
   m_Layer: 0
   m_Name: Shield Part (6)
   m_TagString: Untagged
@@ -1556,3 +1726,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2305299583761200966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574259242437705710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47f0bc1947923e4d9865cb2b599c868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
