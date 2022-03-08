@@ -36,7 +36,7 @@ public class SpawnUFO : MonoBehaviour
             Instantiate(UFO, thisTransform);
             accumulatedTime = 0f;
             spawnDelay = new TimeSpan(0, 0, randomSeconds);
-            Debug.Log(spawnDelay.Seconds);
+            Debug.Log("Next UFO Spawn: " + spawnDelay.Seconds);
         }
     }
 }
