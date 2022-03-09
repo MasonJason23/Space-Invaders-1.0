@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Aliens : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class Aliens : MonoBehaviour
     public float movementDelay = 1;
     public float rowAdvanceY = 1;
     public Vector3 direction = Vector3.right;
-    
+
     private float accumulatedTime = 0f;
     private float delayShorten;
     private int totalAliens;
+    private int enemyShootDelay = 1;
+    private float enemyWait = 0f;
 
     private void Awake()
     {
@@ -47,6 +50,28 @@ public class Aliens : MonoBehaviour
         {
             this.transform.position += (direction * movementSpd);
             accumulatedTime = 0f;
+        }
+
+        enemyWait += Time.deltaTime;
+        if (enemyWait >= enemyShootDelay)
+        {
+            enemyWait = 0;
+            int randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
+            Transform enemyChild = this.gameObject.transform.GetChild(randomIndex);
+            Transform enemyChild1 = this.gameObject.transform.GetChild(randomIndex);
+            Transform enemyChild2 = this.gameObject.transform.GetChild(randomIndex);
+            if (enemyChild != null)
+            {
+                enemyChild.GetComponent<Enemy>().enemyShoot();
+            }
+            if (enemyChild1 != null)
+            {
+                enemyChild1.GetComponent<Enemy>().enemyShoot();
+            }
+            if (enemyChild2 != null)
+            {
+                enemyChild2.GetComponent<Enemy>().enemyShoot();
+            }
         }
 
         foreach (Transform alien in this.transform)

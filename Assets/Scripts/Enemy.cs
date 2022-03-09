@@ -42,20 +42,25 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        accumulatedTime += Time.deltaTime;
-        if (accumulatedTime >= shootingDelay)
-        {
-            accumulatedTime = 0f;
-            if (Random.value < shootingFrequency)
-            {
-                shot = Instantiate(bullet, offset.position, Quaternion.identity);
-            }
-        }
+        // accumulatedTime += Time.deltaTime;
+        // if (accumulatedTime >= shootingDelay)
+        // {
+        //     accumulatedTime = 0f;
+        //     if (Random.value < shootingFrequency)
+        //     {
+        //         shot = Instantiate(bullet, offset.position, Quaternion.identity);
+        //     }
+        // }
 
         if (shot != null)
         {
             Destroy(shot, 3f);
         }
+    }
+
+    public void enemyShoot()
+    {
+        shot = Instantiate(bullet, offset.position, Quaternion.identity);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
