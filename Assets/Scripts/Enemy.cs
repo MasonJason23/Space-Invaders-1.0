@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
 {
     public GameObject bullet;
     public Transform offset;
-    
+    public event Action enemyDied;
+
     private string mTag;
     private GameObject shot;
 
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
         if (!collision.gameObject.tag.Equals("Missile"))
         {
             ScoreManager.updateScore(this.gameObject.tag);
+            enemyDied();
             Destroy(this.gameObject);
         }
     }

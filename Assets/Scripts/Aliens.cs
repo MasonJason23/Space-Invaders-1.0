@@ -8,7 +8,7 @@ public class Aliens : MonoBehaviour
 {
     public Enemy[] prefabs;
     public Vector3 direction = Vector3.right;
-    public ScriptableObject scoreManager;
+    public ScoreManager scoreManager;
     public int row = 5;
     public int col = 11;
     public float movementSpd = 1;
@@ -28,6 +28,7 @@ public class Aliens : MonoBehaviour
             for (int j = 0; j < col; j++)
             {
                 Enemy alien = Instantiate(this.prefabs[i], this.transform);
+                alien.enemyDied += updateScore;
                 float newX = alien.transform.position.x + j;
                 float newY = alien.transform.position.y + i;
                 alien.transform.position = new Vector2(newX, newY);
@@ -39,6 +40,7 @@ public class Aliens : MonoBehaviour
     private void Start()
     {
         delayShorten = 0;
+        scoreManager.GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -83,11 +85,18 @@ public class Aliens : MonoBehaviour
             }
             else if (Math.Abs(alien.transform.position.x) > 11f)
             {
-                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - rowAdvanceY, 0f);
+                this.transform.position =
+                    new Vector3(this.transform.position.x, this.transform.position.y - rowAdvanceY, 0f);
                 direction.x *= -1;
                 this.transform.position += (direction * movementSpd);
                 break;
             }
         }
+    }
+
+    private void updateScore()
+    {
+        // Ask how to refer to enemy after listening to enemy died event
+        // scoreManager.updateScore();
     }
 }
