@@ -7,13 +7,14 @@ using Random = UnityEngine.Random;
 public class Aliens : MonoBehaviour
 {
     public Enemy[] prefabs;
+    public Vector3 direction = Vector3.right;
+    public ScriptableObject scoreManager;
     public int row = 5;
     public int col = 11;
     public float movementSpd = 1;
     public float movementDelay = 1;
     public float rowAdvanceY = 1;
-    public Vector3 direction = Vector3.right;
-
+    
     private float accumulatedTime = 0f;
     private float delayShorten;
     private int totalAliens;
