@@ -1,44 +1,34 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
     public GameObject bullet;
     public Transform offset;
-    public event Action enemyDied;
-
-    private string mTag;
-    private GameObject shot;
-
-    private void Start()
-    {
-        mTag = this.gameObject.tag;
-    }
-
+    public event Action<GameObject> EnemyDied;
+    private GameObject m_Shot;
+    
     private void Update()
     {
-        if (shot != null)
+        if (m_Shot != null)
         {
-            Destroy(shot, 3f);
+            Destroy(m_Shot, 3f);
         }
     }
 
-    public void enemyShoot()
+    public void EnemyShoot()
     {
-        shot = Instantiate(bullet, offset.position, Quaternion.identity);
+        m_Shot = Instantiate(bullet, offset.position, Quaternion.identity);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.gameObject.tag.Equals("Missile"))
         {
-            ScoreManager.updateScore(this.gameObject.tag);
-            enemyDied();
+            if (EnemyDied != null)
+            {
+                EnemyDied(gameObject);
+            }
             Destroy(this.gameObject);
         }
     }

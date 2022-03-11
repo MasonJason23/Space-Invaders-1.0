@@ -28,7 +28,7 @@ public class Aliens : MonoBehaviour
             for (int j = 0; j < col; j++)
             {
                 Enemy alien = Instantiate(this.prefabs[i], this.transform);
-                alien.enemyDied += updateScore;
+                // alien.enemyDied += updateScore;
                 float newX = alien.transform.position.x + j;
                 float newY = alien.transform.position.y + i;
                 alien.transform.position = new Vector2(newX, newY);
@@ -59,22 +59,25 @@ public class Aliens : MonoBehaviour
         if (enemyWait >= enemyShootDelay)
         {
             enemyWait = 0;
-            int randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
-            Transform enemyChild = this.gameObject.transform.GetChild(randomIndex);
-            Transform enemyChild1 = this.gameObject.transform.GetChild(randomIndex);
-            Transform enemyChild2 = this.gameObject.transform.GetChild(randomIndex);
-            if (enemyChild != null)
-            {
-                enemyChild.GetComponent<Enemy>().enemyShoot();
-            }
-            if (enemyChild1 != null)
-            {
-                enemyChild1.GetComponent<Enemy>().enemyShoot();
-            }
-            if (enemyChild2 != null)
-            {
-                enemyChild2.GetComponent<Enemy>().enemyShoot();
-            }
+            // ToDo: Fix Transform out of bounds error
+            // int randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
+            // Transform enemyChild = this.gameObject.transform.GetChild(randomIndex);
+            // randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
+            // Transform enemyChild1 = this.gameObject.transform.GetChild(randomIndex);
+            // randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
+            // Transform enemyChild2 = this.gameObject.transform.GetChild(randomIndex);
+            // if (enemyChild != null)
+            // {
+            //     enemyChild.GetComponent<Enemy>().enemyShoot();
+            // }
+            // if (enemyChild1 != null)
+            // {
+            //     enemyChild1.GetComponent<Enemy>().enemyShoot();
+            // }
+            // if (enemyChild2 != null)
+            // {
+            //     enemyChild2.GetComponent<Enemy>().enemyShoot();
+            // }
         }
 
         foreach (Transform alien in this.transform)

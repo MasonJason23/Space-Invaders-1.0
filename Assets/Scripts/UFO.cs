@@ -6,14 +6,7 @@ using UnityEngine;
 public class UFO : MonoBehaviour
 {
     public float movementSpd;
-    
-    private string mTag;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        mTag = this.gameObject.tag;
-    }
+    public event Action<GameObject> UfoDied;
 
     // Update is called once per frame
     void Update()
@@ -28,7 +21,10 @@ public class UFO : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        ScoreManager.updateScore(this.gameObject.tag);
         Destroy(this.gameObject);
+        if (UfoDied != null)
+        {
+            UfoDied(gameObject);
+        }
     }
 }

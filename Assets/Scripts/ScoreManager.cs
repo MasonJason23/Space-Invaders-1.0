@@ -33,6 +33,13 @@ public class ScoreManager : MonoBehaviour
         highScoreChange = false;
 
         FindObjectOfType<Player>().playerDied += OnPlayerDeath;
+        Enemy[] enemyArray = FindObjectsOfType<Enemy>();
+        for (int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i].EnemyDied += OnEnemyDeath;
+        }
+
+        FindObjectOfType<SpawnUFO>().UfoSpawn += GetUfoDeathEvent;
     }
     
     void Update()
@@ -54,55 +61,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public static void updateScore(string enemyType)
-    {
-        scoreChange = true;
-        if (enemyType.Equals("E1"))
-        {
-            playerScore += 10;
-        }
-        else if (enemyType.Equals("E2"))
-        {
-            playerScore += 20;
-        }
-        else if (enemyType.Equals("E3"))
-        {
-            playerScore += 30;
-        }
-        else if (enemyType.Equals("UFO"))
-        {
-            int randomPtVal = Mathf.CeilToInt(Random.value * 5);
-            switch (randomPtVal)
-            {
-                case 2:
-                    playerScore += 100;
-                    break;
-                case 3:
-                    playerScore += 150;
-                    break;
-                case 4:
-                    playerScore += 200;
-                    break;
-                case 5:
-                    playerScore += 250;
-                    break;
-                default:
-                    playerScore += 50;
-                    break;
-            }
-        }
-
-        if (playerScore > highScore)
-        {
-            PlayerPrefs.SetInt("highScore",playerScore);
-            highScore = playerScore;
-            if (!highScoreChange)
-            {
-                highScoreChange = true;
-            }
-        }
-    }
-
     private void updateUIScore(TextMeshProUGUI element, int score)
     {
         element.text = "";
@@ -115,7 +73,61 @@ public class ScoreManager : MonoBehaviour
         element.text += score.ToString();
     }
 
-    public void OnPlayerDeath()
+    private void OnEnemyDeath(GameObject enemy)
+    {
+        scoreChange = true;
+        if (enemy.name.Equals("Tier 1(Clone)"))
+        {
+            playerScore += 10;
+        }
+        else if (enemy.name.Equals("Tier 2(Clone)"))
+        {
+            playerScore += 20;
+        }
+        else if (enemy.name.Equals("Tier 3(Clone)"))
+        {
+            playerScore += 30;
+        }
+        else
+        {
+            int randomPtValue = Mathf.RoundToInt(Random.Range(1, 5));
+            switch (randomPtValue)
+            {
+                case 1:
+                    playerScore += 50;
+                    break;
+                case 2:
+                    playerScore += 100;
+                    break;
+                case 3:
+                    playerScore += 150;
+                    break;
+                case 4:
+                    playerScore += 200;
+                    break;
+                default:
+                    playerScore += 250;
+                    break;
+            }
+        }
+        
+        if (playerScore > highScore)
+        {
+            PlayerPrefs.SetInt("highScore",playerScore);
+            highScore = playerScore;
+            if (!highScoreChange)
+            {
+                highScoreChange = true;
+            }
+        }
+    }
+
+    void GetUfoDeathEvent()
+    {
+        FindObjectOfType<UFO>().UfoDied += OnEnemyDeath;
+    }
+
+    private void OnPlayerDeath()
     {
         Time.timeScale = 0;
     }

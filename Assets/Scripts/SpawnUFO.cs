@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class SpawnUFO : MonoBehaviour
 {
+    public event Action UfoSpawn;
+    
     [SerializeField] private GameObject UFO;
     private Transform thisTransform;
     private TimeSpan spawnDelay;
@@ -34,9 +36,12 @@ public class SpawnUFO : MonoBehaviour
         if (accumulatedTime >= spawnDelay.Seconds)
         {
             Instantiate(UFO, thisTransform);
+            if (UfoSpawn != null)
+            {
+                UfoSpawn();
+            }
             accumulatedTime = 0f;
             spawnDelay = new TimeSpan(0, 0, randomSeconds);
-            Debug.Log("Next UFO Spawn: " + spawnDelay.Seconds);
         }
     }
 }
