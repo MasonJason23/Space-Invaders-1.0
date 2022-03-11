@@ -59,25 +59,25 @@ public class Aliens : MonoBehaviour
         if (enemyWait >= enemyShootDelay)
         {
             enemyWait = 0;
-            // ToDo: Fix Transform out of bounds error
-            // int randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
-            // Transform enemyChild = this.gameObject.transform.GetChild(randomIndex);
-            // randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
-            // Transform enemyChild1 = this.gameObject.transform.GetChild(randomIndex);
-            // randomIndex = Mathf.RoundToInt(Random.Range(0, totalAliens-1));
-            // Transform enemyChild2 = this.gameObject.transform.GetChild(randomIndex);
-            // if (enemyChild != null)
-            // {
-            //     enemyChild.GetComponent<Enemy>().enemyShoot();
-            // }
-            // if (enemyChild1 != null)
-            // {
-            //     enemyChild1.GetComponent<Enemy>().enemyShoot();
-            // }
-            // if (enemyChild2 != null)
-            // {
-            //     enemyChild2.GetComponent<Enemy>().enemyShoot();
-            // }
+            int numChildren = transform.childCount;
+            int randomIndex = Mathf.RoundToInt(Random.Range(0, numChildren-1));
+            Transform enemyChild = this.gameObject.transform.GetChild(randomIndex);
+            randomIndex = Mathf.RoundToInt(Random.Range(0, numChildren-1));
+            Transform enemyChild1 = this.gameObject.transform.GetChild(randomIndex);
+            randomIndex = Mathf.RoundToInt(Random.Range(0, numChildren-1));
+            Transform enemyChild2 = this.gameObject.transform.GetChild(randomIndex);
+            if (enemyChild != null)
+            {
+                enemyChild.GetComponent<Enemy>().EnemyShoot();
+            }
+            if (enemyChild1 != null)
+            {
+                enemyChild1.GetComponent<Enemy>().EnemyShoot();
+            }
+            if (enemyChild2 != null)
+            {
+                enemyChild2.GetComponent<Enemy>().EnemyShoot();
+            }
         }
 
         foreach (Transform alien in this.transform)

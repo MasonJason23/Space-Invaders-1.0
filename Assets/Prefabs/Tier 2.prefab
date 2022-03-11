@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6055069717150008154}
   - component: {fileID: 5948996942061377388}
   - component: {fileID: 4988884264498715822}
+  - component: {fileID: 1431842157983767376}
   m_Layer: 0
   m_Name: Tier 2
   m_TagString: E2
@@ -92,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3bdde5588feb85e408d6884de1c50fb0, type: 2}
+  - {fileID: 2100000, guid: 55f12153547e1ae4b85190cb496ee607, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,3 +155,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1751941522042226608, guid: d3b841e5112e27a40aa73c12a31bbc55, type: 3}
   offset: {fileID: 1865813859770704473}
+--- !u!95 &1431842157983767376
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483517710255911465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 153e2fea4ed9bb04e893b91b50255d67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

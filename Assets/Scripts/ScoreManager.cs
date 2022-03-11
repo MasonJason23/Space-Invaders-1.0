@@ -78,15 +78,15 @@ public class ScoreManager : MonoBehaviour
         scoreChange = true;
         if (enemy.name.Equals("Tier 1(Clone)"))
         {
-            playerScore += 10;
+            playerScore += 50;
         }
         else if (enemy.name.Equals("Tier 2(Clone)"))
         {
-            playerScore += 20;
+            playerScore += 100;
         }
         else if (enemy.name.Equals("Tier 3(Clone)"))
         {
-            playerScore += 30;
+            playerScore += 150;
         }
         else
         {
