@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        string scene = "MainGame";
+        string scene = "MainMenu";
         StartCoroutine(Delay(scene));
     }
     
