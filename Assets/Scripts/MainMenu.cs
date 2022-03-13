@@ -8,11 +8,19 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("FirstLevel");
+        string scene = "MainGame";
+        StartCoroutine(Delay(scene));
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        string scene = "MainGame";
+        StartCoroutine(Delay(scene));
+    }
+    
+    IEnumerator Delay(string scene)
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene(scene);
     }
 }
