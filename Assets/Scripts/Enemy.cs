@@ -6,8 +6,18 @@ public class Enemy : MonoBehaviour
     public GameObject bullet;
     public Transform offset;
     public event Action<GameObject> EnemyDied;
+
+    private Animator enemyAnimator;
     private GameObject m_Shot;
-    
+    private Collider2D enemyCollider2D;
+    private static readonly int Death = Animator.StringToHash("Death");
+
+    private void Start()
+    {
+        enemyAnimator = GetComponent<Animator>();
+        enemyCollider2D = GetComponent<Collider2D>();
+    }
+
     private void Update()
     {
         if (Player.setActive)
@@ -27,13 +37,15 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Destroy(enemyCollider2D);
         if (!collision.gameObject.tag.Equals("Missile"))
         {
             if (EnemyDied != null)
             {
                 EnemyDied(gameObject);
             }
-            Destroy(this.gameObject);
+            enemyAnimator.SetBool(Death, true);
+            Destroy(this.gameObject, 0.6f);
         }
     }
 }

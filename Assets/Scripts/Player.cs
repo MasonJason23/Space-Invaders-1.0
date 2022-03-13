@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public static bool setActive;
 
     private Animator playerAnimator;
+    private ParticleSystem playerParticles;
     private Rigidbody2D rbody2D;
     private float horizontalMovement;
     private static readonly int Death = Animator.StringToHash("Death");
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     {
         rbody2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        playerParticles = GetComponent<ParticleSystem>();
         setActive = false;
     }
 
@@ -29,15 +31,17 @@ public class Player : MonoBehaviour
     {
         if (setActive)
         {
+            rbody2D.velocity = Vector2.zero;
             return;
         }
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        shoot();
-    }
 
-    void FixedUpdate()
-    {
+        if (Input.GetButton("Horizontal"))
+        {
+            playerParticles.Play();
+        }
+        horizontalMovement = Input.GetAxisRaw("Horizontal");
         rbody2D.velocity = new Vector2(horizontalMovement * movementSpd, 0);
+        shoot();
     }
 
     void shoot()
@@ -56,10 +60,10 @@ public class Player : MonoBehaviour
         {
             playerDied();
         }
-
+        
         setActive = true;
+        playerParticles.Stop();
         playerAnimator.SetBool(Death, true);
-        playerAnimator.Play("Player Death");
         Destroy(gameObject, 1.1f);
     }
 }

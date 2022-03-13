@@ -8,6 +8,16 @@ public class UFO : MonoBehaviour
     public float movementSpd;
     public event Action<GameObject> UfoDied;
 
+    private Collider2D UfoCollider2D;
+    private Animator UfoAnimator;
+    private static readonly int Death = Animator.StringToHash("Death");
+
+    private void Start()
+    {
+        UfoAnimator = GetComponent<Animator>();
+        UfoCollider2D = GetComponent<Collider2D>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +31,9 @@ public class UFO : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        UfoAnimator.SetBool(Death, true);
+        Destroy(UfoCollider2D);
+        Destroy(this.gameObject, 0.6f);
         if (UfoDied != null)
         {
             UfoDied(gameObject);

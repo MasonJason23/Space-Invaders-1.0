@@ -57,6 +57,5 @@ public class Bullet : MonoBehaviour
     public void OnPlayerDeath()
     {
       FindObjectOfType<Player>().playerDied -= OnPlayerDeath;
-      Debug.Log("Bullet knows player died");
     }
 }
