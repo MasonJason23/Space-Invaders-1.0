@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Transform offset;
     public event Action<GameObject> EnemyDied;
 
+    private ParticleSystem enemyParticleSystem;
     private Animator enemyAnimator;
     private GameObject m_Shot;
     private Collider2D enemyCollider2D;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        enemyParticleSystem = GetComponent<ParticleSystem>();
         enemyAnimator = GetComponent<Animator>();
         enemyCollider2D = GetComponent<Collider2D>();
     }
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
     public void EnemyShoot()
     {
         m_Shot = Instantiate(bullet, offset.position, Quaternion.identity);
+        enemyParticleSystem.Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public static bool setActive;
 
     private GameObject shot;
+    private AudioSource playerAudioSrc;
     private Animator playerAnimator;
     private Animator muzzleAnimator;
     private ParticleSystem playerParticles;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerParticles = GetComponent<ParticleSystem>();
         muzzleAnimator = muzzle.GetComponent<Animator>();
+        playerAudioSrc = GetComponent<AudioSource>();
         setActive = false;
     }
 
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour
         {
             shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
             muzzleAnimator.SetTrigger(Shoot);
+            playerAudioSrc.Play();
 
             Destroy(shot, 1.8f);
         }
