@@ -12,14 +12,15 @@ public class Player : MonoBehaviour
     [Range (1f, 100f)]
     public float movementSpd;
     public static bool setActive;
-    
+
+    private GameObject shot;
     private Animator playerAnimator;
     private Animator muzzleAnimator;
     private ParticleSystem playerParticles;
     private Rigidbody2D rbody2D;
-    private float horizontalMovement;
     private static readonly int Death = Animator.StringToHash("Death");
     private static readonly int Shoot = Animator.StringToHash("Shoot");
+    private float horizontalMovement;
 
     private void Start()
     {
@@ -50,12 +51,12 @@ public class Player : MonoBehaviour
 
     void shoot()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && shot == null)
         {
-            GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
             muzzleAnimator.SetTrigger(Shoot);
 
-            Destroy(shot, 3f);
+            Destroy(shot, 1.8f);
         }
     }
 
