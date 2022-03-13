@@ -7,22 +7,26 @@ public class Player : MonoBehaviour
 {
     public event Action playerDied;
     public GameObject bullet;
+    public GameObject muzzle;
     public Transform shottingOffset;
     [Range (1f, 100f)]
     public float movementSpd;
     public static bool setActive;
-
+    
     private Animator playerAnimator;
+    private Animator muzzleAnimator;
     private ParticleSystem playerParticles;
     private Rigidbody2D rbody2D;
     private float horizontalMovement;
     private static readonly int Death = Animator.StringToHash("Death");
+    private static readonly int Shoot = Animator.StringToHash("Shoot");
 
     private void Start()
     {
         rbody2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerParticles = GetComponent<ParticleSystem>();
+        muzzleAnimator = muzzle.GetComponent<Animator>();
         setActive = false;
     }
 
@@ -49,6 +53,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            muzzleAnimator.SetTrigger(Shoot);
 
             Destroy(shot, 3f);
         }
