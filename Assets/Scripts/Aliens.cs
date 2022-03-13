@@ -46,6 +46,10 @@ public class Aliens : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Player.setActive)
+        {
+            return;
+        }
         delayShorten = (1f - ((GetComponentsInChildren<Enemy>().Length - 0.01f) / totalAliens)) / 1.2f;
         
         accumulatedTime += Time.deltaTime;
@@ -95,11 +99,5 @@ public class Aliens : MonoBehaviour
                 break;
             }
         }
-    }
-
-    private void updateScore()
-    {
-        // Ask how to refer to enemy after listening to enemy died event
-        // scoreManager.updateScore();
     }
 }

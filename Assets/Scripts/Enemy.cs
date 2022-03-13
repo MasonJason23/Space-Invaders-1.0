@@ -10,6 +10,10 @@ public class Enemy : MonoBehaviour
     
     private void Update()
     {
+        if (Player.setActive)
+        {
+            return;
+        }
         if (m_Shot != null)
         {
             Destroy(m_Shot, 3f);

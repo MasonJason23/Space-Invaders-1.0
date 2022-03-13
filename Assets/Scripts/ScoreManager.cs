@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 
 public class ScoreManager : MonoBehaviour
 {
+    
     public TextMeshProUGUI playerScoreText;
     public TextMeshProUGUI highScoreText;
     
@@ -129,6 +130,12 @@ public class ScoreManager : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-        Time.timeScale = 0;
+        StartCoroutine(WaitForSceneLoad());
+    }
+
+    IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("EndScreen");
     }
 }

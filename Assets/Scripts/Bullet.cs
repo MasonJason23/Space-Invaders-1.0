@@ -20,6 +20,14 @@ public class Bullet : MonoBehaviour
       FindObjectOfType<Player>().playerDied += OnPlayerDeath;
     }
 
+    private void Update()
+    {
+      if (Player.setActive)
+      {
+        Destroy(gameObject);
+      }
+    }
+
     // Update is called once per frame
     private void Fire()
     {

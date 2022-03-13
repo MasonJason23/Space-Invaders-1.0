@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3609444698749228658}
   - component: {fileID: 3791936555625136708}
   - component: {fileID: 8017684208409169088}
+  - component: {fileID: 7713957105771731745}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -125,6 +126,25 @@ MonoBehaviour:
   bullet: {fileID: 2457785739244962049, guid: d4511b14daaa37c468a74ed386b2583f, type: 3}
   shottingOffset: {fileID: 8125335893176967482}
   movementSpd: 0
+--- !u!95 &7713957105771731745
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129043850064504577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 725e089fa97bd984d85bf66ea68885ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6424274885353042238
 GameObject:
   m_ObjectHideFlags: 0
