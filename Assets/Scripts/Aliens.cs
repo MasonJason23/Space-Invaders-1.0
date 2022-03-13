@@ -68,8 +68,6 @@ public class Aliens : MonoBehaviour
             Transform enemyChild = this.gameObject.transform.GetChild(randomIndex);
             randomIndex = Mathf.RoundToInt(Random.Range(0, numChildren-1));
             Transform enemyChild1 = this.gameObject.transform.GetChild(randomIndex);
-            randomIndex = Mathf.RoundToInt(Random.Range(0, numChildren-1));
-            Transform enemyChild2 = this.gameObject.transform.GetChild(randomIndex);
             if (enemyChild != null)
             {
                 enemyChild.GetComponent<Enemy>().EnemyShoot();
@@ -77,10 +75,6 @@ public class Aliens : MonoBehaviour
             if (enemyChild1 != null)
             {
                 enemyChild1.GetComponent<Enemy>().EnemyShoot();
-            }
-            if (enemyChild2 != null)
-            {
-                enemyChild2.GetComponent<Enemy>().EnemyShoot();
             }
         }
 
@@ -92,8 +86,7 @@ public class Aliens : MonoBehaviour
             }
             else if (Math.Abs(alien.transform.position.x) > 11f)
             {
-                this.transform.position =
-                    new Vector3(this.transform.position.x, this.transform.position.y - rowAdvanceY, 0f);
+                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - rowAdvanceY, 0f);
                 direction.x *= -1;
                 this.transform.position += (direction * movementSpd);
                 break;

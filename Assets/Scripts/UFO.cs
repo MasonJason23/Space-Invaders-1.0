@@ -7,6 +7,7 @@ public class UFO : MonoBehaviour
 {
     public float movementSpd;
     public event Action<GameObject> UfoDied;
+    public AudioSource UfoExplosion;
 
     private Collider2D UfoCollider2D;
     private Animator UfoAnimator;
@@ -31,9 +32,10 @@ public class UFO : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
+        UfoExplosion.Play();
         UfoAnimator.SetBool(Death, true);
         Destroy(UfoCollider2D);
-        Destroy(this.gameObject, 0.6f);
+        Destroy(this.gameObject, 1f);
         if (UfoDied != null)
         {
             UfoDied(gameObject);

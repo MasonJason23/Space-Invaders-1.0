@@ -6,7 +6,9 @@ public class Enemy : MonoBehaviour
     public GameObject bullet;
     public Transform offset;
     public event Action<GameObject> EnemyDied;
-
+    public AudioSource explosionAudioSrc;
+    public AudioSource shootAudioSrc;
+    
     private ParticleSystem enemyParticleSystem;
     private Animator enemyAnimator;
     private GameObject m_Shot;
@@ -34,12 +36,14 @@ public class Enemy : MonoBehaviour
 
     public void EnemyShoot()
     {
+        shootAudioSrc.Play();
         m_Shot = Instantiate(bullet, offset.position, Quaternion.identity);
         enemyParticleSystem.Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        explosionAudioSrc.Play();
         Destroy(enemyCollider2D);
         if (!collision.gameObject.tag.Equals("Missile"))
         {
@@ -48,7 +52,7 @@ public class Enemy : MonoBehaviour
                 EnemyDied(gameObject);
             }
             enemyAnimator.SetBool(Death, true);
-            Destroy(this.gameObject, 0.6f);
+            Destroy(this.gameObject, 1f);
         }
     }
 }

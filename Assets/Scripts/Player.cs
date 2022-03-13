@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     [Range (1f, 100f)]
     public float movementSpd;
     public static bool setActive;
-
-    private GameObject shot;
-    private AudioSource playerAudioSrc;
+    public float shotDelay = 0.5f;
+    public float accumulatedTime = 0f;
+    public AudioSource playerShootAudio;
+    public AudioSource playerDeathAudio;
+    
     private Animator playerAnimator;
     private Animator muzzleAnimator;
     private ParticleSystem playerParticles;
@@ -29,7 +31,6 @@ public class Player : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerParticles = GetComponent<ParticleSystem>();
         muzzleAnimator = muzzle.GetComponent<Animator>();
-        playerAudioSrc = GetComponent<AudioSource>();
         setActive = false;
     }
 
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
             return;
         }
 
+        accumulatedTime += Time.deltaTime;
         if (Input.GetButton("Horizontal"))
         {
             playerParticles.Play();
@@ -53,11 +55,12 @@ public class Player : MonoBehaviour
 
     void shoot()
     {
-        if (Input.GetButtonDown("Fire1") && shot == null)
+        if (Input.GetButtonDown("Fire1") && accumulatedTime >= shotDelay)
         {
-            shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            accumulatedTime = 0f;
+            GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
             muzzleAnimator.SetTrigger(Shoot);
-            playerAudioSrc.Play();
+            playerShootAudio.Play();
 
             Destroy(shot, 1.8f);
         }
@@ -70,6 +73,7 @@ public class Player : MonoBehaviour
             playerDied();
         }
         
+        playerDeathAudio.Play();
         setActive = true;
         playerParticles.Stop();
         playerAnimator.SetBool(Death, true);
