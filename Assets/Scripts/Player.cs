@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [Range (1f, 100f)]
     public float movementSpd;
     public static bool setActive;
-    public float shotDelay = 0.5f;
+    public float shotDelay = 0.3f;
     public float accumulatedTime = 0f;
     public AudioSource playerShootAudio;
     public AudioSource playerDeathAudio;

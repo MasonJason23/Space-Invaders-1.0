@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpd: 1
-  UfoExplosion: {fileID: 0}
+  UfoExplosion: {fileID: 6084914040420344355}
 --- !u!95 &4548967513578304326
 Animator:
   serializedVersion: 3

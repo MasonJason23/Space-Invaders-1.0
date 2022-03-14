@@ -33,12 +33,12 @@ public class UFO : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         UfoExplosion.Play();
-        UfoAnimator.SetBool(Death, true);
         Destroy(UfoCollider2D);
-        Destroy(this.gameObject, 1f);
         if (UfoDied != null)
         {
             UfoDied(gameObject);
         }
+        UfoAnimator.SetBool(Death, true);
+        Destroy(this.gameObject, 1f);
     }
 }
