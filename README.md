@@ -3,5 +3,5 @@
 The only files that are relative to game development in this repository should only be inside the `Assets` directory<br>
 ***There is no build to run this game***
 
-## Gameplay Video
-`Coming Soon`
+# Gameplay Video
+[Space Invaders Gameplay](https://youtu.be/rUiALhqfmf0)
